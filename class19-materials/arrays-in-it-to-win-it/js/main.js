@@ -5,4 +5,4 @@ let butts = arrMovies[0]
 //Get the length of the original array and store it in a new variable
 let cheeks = arrMovies.length
 //Get the last element in that array and store it in a new variable. What if your array was really large and you didn't know the last index? Would your solution still work?
-let thighs = arrMovies.pop()
+let thighs = arrMovies [arrMovies.length - 1]
