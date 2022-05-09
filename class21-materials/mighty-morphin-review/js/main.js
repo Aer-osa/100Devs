@@ -18,11 +18,32 @@ function takeFiveNumber(n1, n2, n3, n4, n5){
 takeFiveNumber(27,48,75,21,35)
 
 // Create a function that takes in 3 numbers. Console log lowest and highest values. Call the function.
-
+function logHighAndLow(n1,n2,n3){
+let min = Math.min(n1,n2,n3)
+let max = Math.max(n1,n2,n3)
+console.log(`The lowest num is ${min} and the highest num is ${max}`)
+}
+logHighAndLow(27,578,23)
 
 // *Conditionals*
 //Create a function that returns heads or tails randomly and as fairly as possible. Call the function.
-
-
+// function headsOrTails(){
+   
+//     let result = Math.random()
+//     if(result < .5){
+//         return 'heads'
+//     }else{
+//         return 'tails'
+//     }
+// }
+const headsOrTails = _ => Math.random() < .5 ? 'heads' : 'tails'
+// console.log(headsOrTails())
 //*Loops*
 //Create a function that takes in a number. Console log the result of heads or tails using the previous function x times where x is the number passed into the function. Call the function.
+function flipFlipFliparino(n){
+    for(let i = 1; i <= n; i++){
+        let result = headsOrTails()
+        console.log(result)
+    }
+}
+flipFlipFliparino(10)
