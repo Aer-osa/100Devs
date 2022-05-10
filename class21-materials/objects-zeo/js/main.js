@@ -1,23 +1,23 @@
 //Create a stopwatch object that has four properties and three methods
-let stopwatch = {}
+// let stopwatch = {}
 
-stopwatch.currentimehours = 12
+// stopwatch.currentimehours = 12
 
-stopwatch.currenttimeminutes = 30
+// stopwatch.currenttimeminutes = 30
 
-stopwatch.currenttimeseconds = 59
+// stopwatch.currenttimeseconds = 59
 
-stopwatch.color = 'black'
+// stopwatch.color = 'black'
 
-stopwatch.stop = function() {
-    console.log('STAHHHHHHHHPPPP')
-}
+// stopwatch.stop = function() {
+//     console.log('STAHHHHHHHHPPPP')
+// }
 
-stopwatch.start = function() {
-    console.log('StartingGGGG')
-}
+// stopwatch.start = function() {
+//     console.log('StartingGGGG')
+// }
 
-stopwatch.sayColor = function(){
-    console.log(stopwatch.color)
-}
-stopwatch.telltime(stopwatch.currenttime)
+// stopwatch.sayColor = function(){
+//     console.log(stopwatch.color)
+// }
+// stopwatch.telltime(stopwatch.currenttime)
