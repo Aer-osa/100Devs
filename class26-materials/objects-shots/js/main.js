@@ -3,7 +3,7 @@ document.querySelector('button').addEventListener('click', getDrink)
 
 function getDrink(){
   const choice = document.querySelector('input').value
-  const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${encodeURIComponent(choice)}`
+  const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${choice}`
   
 
   fetch(url)
