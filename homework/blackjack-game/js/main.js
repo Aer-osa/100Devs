@@ -16,7 +16,7 @@ document.querySelector('button').addEventListener('click', getFetch)
 
 function getFetch(){
   
-  const url = `https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=2`
+  const url = `https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=4`
 
   fetch(url)
       .then(res => res.json()) // parse response as JSON
@@ -24,15 +24,17 @@ function getFetch(){
         console.log(data)
         let val1 = Number(cardValue( data.cards[0].value ))
         let val2 = Number(cardValue( data.cards[1].value ))
-        document.querySelector('#player1').src = data.cards[0].image
-        document.querySelector('#player2').src = data.cards[1].image
-        if(val1 > val2){
-          document.querySelector('h3').innerText = 'Player 1 WON!'
-        }else if(val1 < val2){
-          document.querySelector('h3').innerText = 'Player 2 WON!'
-        }else{
-          document.querySelector('h3').innerText = 'WAR!'
-        }
+        document.querySelector('#player1c1').src = data.cards[0].image
+        document.querySelector('#player1c2').src = data.cards[1].image
+        document.querySelector('#player2c1').src = data.cards[2].image
+        document.querySelector('#player2c2').src = data.cards[3].image
+        // if(val1 > val2){
+        //   document.querySelector('h3').innerText = 'Player 1 WON!'
+        // }else if(val1 < val2){
+        //   document.querySelector('h3').innerText = 'Player 2 WON!'
+        // }else{
+        //   document.querySelector('h3').innerText = 'WAR!'
+        // }
         
       })
       .catch(err => {
