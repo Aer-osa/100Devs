@@ -13,12 +13,16 @@
 img{
   display: block;
   margin: 0 auto;
-  width: 150px;
+  width: 100px;
 }
 
 div{
   display: flex;
-  
+}
+
+div, #player1Cards{
+  border-width: 1px;
+  border-color: red;
 }
 
 

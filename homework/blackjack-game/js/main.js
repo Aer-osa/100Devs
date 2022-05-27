@@ -12,11 +12,11 @@ fetch('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
       });
 
 
-document.querySelector('button').addEventListener('click', getFetch)
+document.querySelector('#Draw').addEventListener('click', getFetch)
 
 function getFetch(){
   
-  const url = `https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=4`
+  const url = `https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=8`
 
   fetch(url)
       .then(res => res.json()) // parse response as JSON
@@ -28,6 +28,10 @@ function getFetch(){
         document.querySelector('#player1c2').src = data.cards[1].image
         document.querySelector('#player2c1').src = data.cards[2].image
         document.querySelector('#player2c2').src = data.cards[3].image
+        document.querySelector('#player1c3').src = data.cards[4].image
+        document.querySelector('#player1c4').src = data.cards[5].image
+        document.querySelector('#player2c3').src = data.cards[6].image
+        document.querySelector('#player2c4').src = data.cards[7].image
         // if(val1 > val2){
         //   document.querySelector('h3').innerText = 'Player 1 WON!'
         // }else if(val1 < val2){
@@ -41,6 +45,28 @@ function getFetch(){
           console.log(`error ${err}`)
       });
 }
+
+// document.querySelector('#Hit').addEventListener('click', nextCard)
+
+// function nextCard(){
+//   const url = `https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=4`
+
+//   fetch(url)
+//       .then(res => res.json()) // parse response as JSON
+//       .then(data => {
+//         console.log(data)
+//         let val1 = Number(cardValue( data.cards[0].value ))
+//         let val2 = Number(cardValue( data.cards[1].value ))
+//         document.querySelector('#player1c3').src = data.cards[4].image
+//         document.querySelector('#player1c4').src = data.cards[5].image
+//         document.querySelector('#player2c3').src = data.cards[6].image
+//         document.querySelector('#player2c4').src = data.cards[7].image
+    
+//       })
+//       .catch(err => {
+//           console.log(`error ${err}`)
+//       });
+// }
 
 function cardValue(val){
   if(val === "ACE"){
