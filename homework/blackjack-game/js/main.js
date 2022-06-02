@@ -12,9 +12,9 @@ fetch('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
       });
 
 
-document.querySelector('#Draw').addEventListener('click', getFetch)
+document.querySelector('#Draw').addEventListener('click', newDraw)
 
-function getFetch(){
+function newDraw(){
   
   const url = `https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=8`
 
@@ -38,13 +38,7 @@ function getFetch(){
         // document.querySelector('#player1c4').src = data.cards[5].image
         // document.querySelector('#player2c3').src = data.cards[6].image
         // document.querySelector('#player2c4').src = data.cards[7].image
-        // if(val1 > val2){
-        //   document.querySelector('h3').innerText = 'Player 1 WON!'
-        // }else if(val1 < val2){
-        //   document.querySelector('h3').innerText = 'Player 2 WON!'
-        // }else{
-        //   document.querySelector('h3').innerText = 'WAR!'
-        // }
+    
         
       })
       .catch(err => {
