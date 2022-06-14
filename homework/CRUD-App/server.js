@@ -1,4 +1,4 @@
-
+const MongoClient = require('mongodb').MongoClient
 const express = require('express')
 const bodyParser= require('body-parser')
 const app = express()
@@ -12,5 +12,9 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
 })
 app.post('/quotes', (req, res) => {
-    console.log('Hellooooooooooooooooo!')
+    console.log(req.body)
   })
+MongoClient.connect('mongodb-connection-string', (err, client) => {
+    console.log()
+  })
+  
