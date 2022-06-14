@@ -13,13 +13,14 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
     app.set('view engine', 'ejs')
     app.use(bodyParser.urlencoded({ extended: true }))
     app.get('/', (req, res) => {
-        res.sendFile(__dirname + '/index.html')
+    
         quotesCollection.find().toArray()
             .then(results =>{
                 console.log(results)
+                res.render('index.ejs', {quotes: results})
             })
             .catch(error => console.error(error))
-       
+        
     })
  
     app.post('/quotes', (req, res) => {
