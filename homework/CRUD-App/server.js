@@ -16,8 +16,7 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
     app.use(express.static('public'))
 
     app.get('/', (req, res) => {
-    
-        quotesCollection.find().toArray()
+        db.collection('quotes').find().toArray()
             .then(results =>{
                 // console.log(results)
                 res.render('index.ejs', {quotes: results})
@@ -53,10 +52,23 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
           })
           .catch(error => console.error(error))
         })
-    })  
+    
+    app.delete('/quotes', (req, res) => {
+      quotesCollection.deleteOne(
+        {name: req.body.name}
+        )
+      .then(result => {
+        if (result.deletedCount === 0) {
+          return res.json('No quote to delete')
+        }
+        res.json("Deleted Garth and Wayne\'s quote")
+      })
+      .catch(error => console.error(error))
+    })
     app.listen(3000, function(){
         console.log('listening on 3000')
     }) 
+  }) 
 
   
 
