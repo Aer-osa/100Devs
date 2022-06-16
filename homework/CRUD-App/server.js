@@ -49,6 +49,7 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
           )
           .then(result => {
               console.log(result)
+              res.json("Success")
           })
           .catch(error => console.error(error))
         })
@@ -56,7 +57,7 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
     app.listen(3000, function(){
         console.log('listening on 3000')
     }) 
-    .catch(console.error)
+
   
 
 
