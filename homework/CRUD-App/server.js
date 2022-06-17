@@ -2,7 +2,7 @@ const MongoClient = require('mongodb').MongoClient
 const express = require('express')
 const bodyParser= require('body-parser')
 const app = express()
-const connectionString = 'mongodb+srv://cheese:5kKDbcDwkWYEmkMn@cluster0.bygje.mongodb.net/?retryWrites=true&w=majority'
+const connectionString = 'mongodb+srv://cheese:byHunEkmswRYIutZ@cluster0.bygje.mongodb.net/?retryWrites=true&w=majority'
 
 MongoClient.connect(connectionString, { useUnifiedTopology: true })
   .then(client => {
@@ -52,23 +52,24 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
           })
           .catch(error => console.error(error))
         })
+        app.delete('/quotes', (req, res) => {
+          quotesCollection.deleteOne(
+            {name: req.body.name}
+            )
+          .then(result => {
+            if (result.deletedCount === 0) {
+              return res.json('No quote to delete')
+            }
+            res.json("Deleted Garth and Wayne\'s quote")
+          })
+          .catch(error => console.error(error))
+        })
+    })  
     
-    app.delete('/quotes', (req, res) => {
-      quotesCollection.deleteOne(
-        {name: req.body.name}
-        )
-      .then(result => {
-        if (result.deletedCount === 0) {
-          return res.json('No quote to delete')
-        }
-        res.json("Deleted Garth and Wayne\'s quote")
-      })
-      .catch(error => console.error(error))
-    })
     app.listen(3000, function(){
         console.log('listening on 3000')
     }) 
-  }) 
+  
 
   
 

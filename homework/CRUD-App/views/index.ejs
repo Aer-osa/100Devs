@@ -8,13 +8,19 @@
     <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-    <h1>WAYNE'S WORLD, PARTY TIME, EXCELLENT, DOweewoweewowhooo</h1>
-    <form action="/quotes" method="POST">
-        <input type="text" placeholder="name" name="name">
-        <input type="text" placeholder="quote" name="quote">
+    <h1 data-position="header">WAYNE'S WORLD, PARTY TIME, EXCELLENT, DOweewoweewowhooo</h1>
+    <section data-position="add-quote">
+      <h2>Add quote</h2>
+
+      <form action="/quotes" method="POST">
+        <input type="text" placeholder="name" name="name" />
+        <input type="text" placeholder="quote" name="quote" />
         <button type="submit">Submit</button>
       </form>
-    <h2> Quotes </h2>
+    </section>
+    <section data-position="quotes">
+      <h2>Quotes</h2>
+
 
       <ul class="quotes">
         <% for(var i = 0; i < quotes.length; i++) {%>
@@ -24,7 +30,10 @@
           </li>
         <% } %>
       </ul>
+    </section>
 
+
+    <section data-position="update-quote">
       <div>
         <h2>Garth and Wayne</h2>
         <p>
@@ -32,6 +41,9 @@
         </p>
         <button id="update-button">Replace quote</button>
       </div>
+    </section>
+
+    <section data-position="delete-quote">
       <div>
         <h2>Remove Garth and Wayne!</h2>
         <p>
@@ -40,6 +52,8 @@
         <button id="delete-button">Delete Garth and Wayne's quote</button>
       </div>
       <div id="message"></div>
+    </section>
+    
     <script src="/main.js"></script>    
 </body>
 
